@@ -1,16 +1,14 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
+import { Link } from "gatsby"
 import Seo from "../components/seo"
+import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage = () => (
   <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <Seo title="Deutsch" />
+    <h1>Deutsch</h1>
     <StaticImage
       src="../images/gatsby-astronaut.png"
       width={300}
@@ -20,10 +18,9 @@ const IndexPage = () => (
       style={{ marginBottom: `1.45rem` }}
     />
     <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
+      <Link to="/de">Deutsch</Link> <br />
+      <Link to="/en">English</Link> <br />
+      <Link to="/cz">Tschechisch</Link>
     </p>
   </Layout>
 )

@@ -1,8 +1,9 @@
 import * as React from "react"
-import PropTypes from "prop-types"
+
+import LanguageSwitch from "./nav/language-switch"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, currentLang, currentPage }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -18,7 +19,7 @@ const Header = ({ siteTitle }) => (
     >
       <h1 style={{ margin: 0 }}>
         <Link
-          to="/"
+          to={`/${currentLang}`}
           style={{
             color: `white`,
             textDecoration: `none`,
@@ -28,15 +29,8 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
+    <LanguageSwitch currentLang={currentLang} currentPage={currentPage} />
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
