@@ -25,12 +25,14 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  let currentLang = ""
-  let currentPage = ""
+  let currentLang = "",
+    currentSlug = "",
+    currentPath = ""
   if (typeof window !== `undefined`) {
-    const pathR = window.location.pathname.split("/")
+    currentPath = window.location.pathname
+    const pathR = currentPath.split("/")
     currentLang = pathR[1] === "" ? "de" : pathR[1]
-    currentPage = pathR.pop()
+    currentSlug = pathR.pop()
   }
 
   return (
@@ -38,9 +40,9 @@ const Layout = ({ children }) => {
       <Header
         siteTitle={data.site.siteMetadata?.title || `Title`}
         currentLang={currentLang}
-        currentPage={currentPage}
+        currentPath={currentPath}
       />
-      <Menu currentLang={currentLang} currentPage={currentPage} />
+      <Menu currentLang={currentLang} currentSlug={currentSlug} />
       <div
         style={{
           margin: `0 auto`,

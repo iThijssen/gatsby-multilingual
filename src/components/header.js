@@ -3,7 +3,7 @@ import * as React from "react"
 import LanguageSwitch from "./nav/language-switch"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle, currentLang, currentPage }) => (
+const Header = ({ siteTitle, currentLang, currentPath }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -29,7 +29,10 @@ const Header = ({ siteTitle, currentLang, currentPage }) => (
         </Link>
       </h1>
     </div>
-    <LanguageSwitch currentLang={currentLang} currentPage={currentPage} />
+    <LanguageSwitch
+      currentLang={currentLang}
+      currentPath={currentPath.slice(1)}
+    />
   </header>
 )
 

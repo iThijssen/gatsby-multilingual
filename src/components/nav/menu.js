@@ -1,34 +1,33 @@
 import * as React from "react"
 
-import { LANGUAGES } from "./language-switch"
-import { Link } from "gatsby"
+import MenuItem from "./menu-item"
 
-export const PAGES = ["page-1", "page-2", "page-3"]
+export const PAGES = [
+  "page-1",
+  "page-2",
+  "page-3",
+  "parent",
+  "parent/child-1",
+  "parent/child-2",
+]
 
-const Menu = ({ currentLang, currentPage }) => (
+const Menu = ({ currentLang, currentSlug }) => (
   <div
     style={{
       width: "100%",
       textAlign: "right",
-      padding: `0 1rem`,
+      padding: `1rem`,
+      height: "5rem"
     }}
   >
     <nav>
-      {PAGES.map((page, index) => (
-        <Link
+      {PAGES.filter(p => !p.includes("/")).map((page, index) => (
+        <MenuItem
           key={index}
-          to={`/${currentLang}/${page}`}
-          style={{
-            padding: `0 1rem`,
-            color: currentPage === page ? "#d85f2a" : "#663399",
-          }}
-        >
-          {
-            LANGUAGES.filter(language => language.code === currentLang)
-              .map(language => language.pages)
-              .map(page => page[index].title)[0]
-          }
-        </Link>
+          currentLang={currentLang}
+          currentSlug={currentSlug}
+          parentSlug={page}
+        />
       ))}
     </nav>
   </div>

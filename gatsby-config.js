@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter - adapted to Multilingual Prototype`,
     description: `Kick off your next, great Gatsby project with this default starter.`,
-    author: `@gatsbyjs`,
+    author: `@gatsbyjs - edited by I.T.`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
